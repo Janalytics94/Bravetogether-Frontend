@@ -1,0 +1,11 @@
+@media (max-width: 600px) {
+  .no_home_mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 600px) {
+  .home_mobile {
+    display: none;
+  }
+}

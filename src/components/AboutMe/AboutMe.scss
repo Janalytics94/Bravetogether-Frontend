@@ -1,0 +1,152 @@
+.background_about_me {
+  background-color: white;
+  padding: 10px;
+}
+
+.about_me_containter {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70em;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.first {
+  width: 300px;
+  float: left; /* add this */
+}
+.second {
+  /* add this */
+  float: right;
+}
+
+.about_me_img_en {
+  width: 260px;
+  height: 380px;
+  margin-top: 50px;
+  margin-right: 100px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(189, 195, 199, 1);
+  -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+}
+
+.about_me_img_ger {
+  width: 260px;
+  height: 380px;
+  margin-top: 50px;
+  margin-right: 100px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(189, 195, 199, 1);
+  -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+}
+
+.about_me {
+  text-align: justify;
+  font-size: 16px;
+  font-family: "Avenir Next";
+
+  /*  float: right;*/
+}
+
+@media screen and (min-width: 360px) and (max-width: 420px) {
+  .about_me_containter {
+    width: 90%;
+    height: 100%;
+    margin-top: -150px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 500px) {
+  .about_me_containter {
+    width: 90%;
+    height: 100%;
+    margin-top: -150px;
+  }
+  .about_me {
+    width: 100%;
+  }
+  .about_me_img_ger {
+    display: none;
+  }
+  .about_me_img_en {
+    display: none;
+  }
+  .first {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 600px) {
+  .about_me_containter {
+    width: 90%;
+    height: 100%;
+    margin-top: 0px;
+  }
+  .about_me {
+    font-size: 16px;
+    width: 100%;
+    padding-right: 35px;
+  }
+  .about_me_img_ger {
+    display: none;
+  }
+  .about_me_img_en {
+    display: none;
+  }
+  .first {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 920px) {
+  .about_me_containter {
+    width: 90%;
+  }
+
+  .about_me {
+    width: 100%;
+    margin-bottom: 150px;
+    padding-right: 35px;
+  }
+  .about_me_img_ger {
+    display: none;
+  }
+
+  .about_me_img_en {
+    display: none;
+  }
+  .first {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 920px) and (max-width: 1200px) {
+  .about_me_containter {
+    width: 82%;
+    padding: 10px;
+  }
+
+  .about_me {
+    margin: 50px auto auto auto;
+    width: 88%;
+  }
+
+  .about_me_img_ger {
+    width: 200px;
+    height: 280px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .about_me_img_en {
+    width: 200px;
+    height: 280px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

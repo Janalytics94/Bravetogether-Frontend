@@ -1,0 +1,16 @@
+.contacat_font {
+  font-size: 12px;
+}
+
+.contact_position {
+  margin-top: 100px;
+  text-align: center;
+  margin: 100px 0px 0px 0px;
+}
+
+.contact_footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+}

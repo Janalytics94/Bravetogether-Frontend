@@ -1,0 +1,88 @@
+.questions_containter {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  margin-top: -200px;
+  margin-bottom: 50px;
+  background-color: white;
+}
+
+.questions {
+  display: inline-block;
+
+  font-size: 16px;
+  background-color: white;
+}
+
+.questions_header {
+  display: inline-block;
+  text-align: justify;
+}
+
+.question_text {
+  display: inline-block;
+  text-align: justify;
+}
+
+.form_font {
+  font-family: "Avenir Next";
+}
+.form_size {
+  height: 1000px;
+}
+
+.header_question {
+  margin-top: 20px;
+}
+
+.line_field {
+}
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+  display: block;
+  width: 100%;
+  height: 87%;
+  color: gray;
+  border-color: lightgray;
+  border-radius: 5px;
+  border-left-color: white;
+  border-top-color: white;
+}
+
+@media (max-width: 600px) {
+  .questions_containter {
+    //width: 80%;
+    font-size: 20px;
+    margin: auto;
+    margin-bottom: 100px;
+  }
+  .questions {
+    width: 100%;
+    margin-top: 50px;
+  }
+  .line_field {
+    margin-top: 30px;
+  }
+
+  .form_font {
+    font-size: 16px;
+  }
+  .questions_header {
+    font-size: 34px;
+  }
+
+  .react-datepicker-wrapper,
+  .react-datepicker__input-container,
+  .react-datepicker__input-container input {
+    display: block;
+    width: 100%;
+    height: 82%;
+    color: gray;
+    border-color: lightgray;
+    border-radius: 5px;
+    border-left-color: white;
+    border-top-color: white;
+  }
+}

@@ -1,0 +1,43 @@
+.background_circle {
+  margin-top: -60px;
+  z-index: 0;
+  position: relative;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.circle {
+  display: flex;
+  width: 150px;
+  height: 150px;
+  background-color: darkgray;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.circle_no_display {
+  display: flex;
+  width: 150px;
+  height: 150px;
+}
+
+.text {
+  margin: auto;
+  font-size: 28px;
+  color: floralwhite;
+  font-family: "Avenir Next";
+}
+
+.background_circle_not {
+  margin-top: -30px;
+  background: transparent;
+  z-index: -1;
+  position: relative;
+}
+
+@media (max-width: 1000px) {
+  .background_circle {
+    display: none;
+  }
+}
