@@ -102,7 +102,7 @@ const Questions = () => {
       }),
     };
     const result = await fetch(
-      "http://127.0.0.1:5000/UserSurveys/add",
+      "https://34a0a8c8i6.execute-api.eu-central-1.amazonaws.com/api/UserSurveys/add",
       requestOptions
     );
   });
