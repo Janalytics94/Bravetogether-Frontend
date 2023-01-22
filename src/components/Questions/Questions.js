@@ -66,12 +66,11 @@ const Questions = () => {
 
     terms: yup.bool().required().oneOf([true], t("questions.46")),
   });
-  const fetchSurvery = useCallback(async () => {
+  const fetchSurvery = useCallback(async (event) => {
     const requestOptions = {
       method: "POST",
-      //crossDomain:true,
-      //mode: 'no-cors',
       headers: { "Content-Type": "application/json" },
+      mode: "cors",
       body: JSON.stringify({
         sex: sex,
         age: age,
@@ -146,7 +145,9 @@ const Questions = () => {
               <div className="form_font">
                 <h1 className="questions_header"> {t("questions.1")}</h1>
 
-                <ReactBootStrap.Form>
+                <ReactBootStrap.Form
+                  onSubmit={(event) => event.preventDefault()}
+                >
                   <ReactBootStrap.Form.Row>
                     <ReactBootStrap.Form.Group
                       as={ReactBootStrap.Col}
