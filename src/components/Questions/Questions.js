@@ -66,8 +66,7 @@ const Questions = () => {
 
     terms: yup.bool().required().oneOf([true], t("questions.46")),
   });
-  const fetchSurvery = useCallback(async (event) => {
-    event.preventDefault();
+  const fetchSurvery = useCallback(async () => {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -149,6 +148,9 @@ const Questions = () => {
                 <ReactBootStrap.Form
                   onSubmit={(event) => {
                     event.preventDefault();
+                    if (checkbox) {
+                      fetchSurvery();
+                    }
                   }}
                 >
                   <ReactBootStrap.Form.Row>
@@ -586,7 +588,6 @@ const Questions = () => {
                     />
                   </ReactBootStrap.Form.Group>
                   <ReactBootStrap.Button
-                    onClick={() => (checkbox ? fetchSurvery() : undefined)}
                     size="md"
                     variant="primary"
                     type="submit"
