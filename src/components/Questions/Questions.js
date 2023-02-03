@@ -67,6 +67,7 @@ const Questions = () => {
     terms: yup.bool().required().oneOf([true], t("questions.46")),
   });
   const fetchSurvery = useCallback(async (event) => {
+    event.preventDefault();
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -145,9 +146,7 @@ const Questions = () => {
               <div className="form_font">
                 <h1 className="questions_header"> {t("questions.1")}</h1>
 
-                <ReactBootStrap.Form
-                  onSubmit={(event) => event.preventDefault()}
-                >
+                <ReactBootStrap.Form>
                   <ReactBootStrap.Form.Row>
                     <ReactBootStrap.Form.Group
                       as={ReactBootStrap.Col}
