@@ -15,6 +15,12 @@ aws configure
 Login to the AWS console using the root account and create an IAM user for your computer. Copy and paste the Access Key ID and the Secret Access Key when prompted in the terminal. Choose profile `default`.
 
 ### Manual deployment
+Make sure you installed all packages.
+```sh
+npm install
+```
+
+Deploy to S3.
 ```sh
 npm run build && aws s3 sync --delete build/ s3://bravetogether
 ```
