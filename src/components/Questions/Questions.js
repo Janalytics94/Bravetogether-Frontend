@@ -585,7 +585,7 @@ const Questions = () => {
                     onClick={() => (checkbox ? fetchSurvery() : undefined)}
                     size="md"
                     variant="primary"
-                    type="submit"
+                    type="reset"
                   >
                     {t("questions.18")}
                   </ReactBootStrap.Button>
