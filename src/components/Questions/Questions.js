@@ -146,7 +146,11 @@ const Questions = () => {
               <div className="form_font">
                 <h1 className="questions_header"> {t("questions.1")}</h1>
 
-                <ReactBootStrap.Form>
+                <ReactBootStrap.Form
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                  }}
+                >
                   <ReactBootStrap.Form.Row>
                     <ReactBootStrap.Form.Group
                       as={ReactBootStrap.Col}
@@ -585,7 +589,7 @@ const Questions = () => {
                     onClick={() => (checkbox ? fetchSurvery() : undefined)}
                     size="md"
                     variant="primary"
-                    type="reset"
+                    type="submit"
                   >
                     {t("questions.18")}
                   </ReactBootStrap.Button>
