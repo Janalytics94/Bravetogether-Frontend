@@ -1,31 +1,19 @@
-import React, { useEffect, useState } from "react";
-import * as ReactBootStrap from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Navbar.scss";
+import React, { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import * as ReactBootStrap from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import "./Navbar.scss";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
-  const [check, setCheck] = useState(true);
-  const [colorDe, setColorDe] = useState("white");
-  const [colorEn, setColorEn] = useState("gray");
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
 
-  function handleClick(lang) {
+  function handleChangeLanguage(lang) {
     i18n.changeLanguage(lang);
+    setCurrentLanguage(lang);
   }
-
-  useEffect(() => {
-    if (check === true) {
-      setColorDe("white");
-      setColorEn("gray");
-    }
-    if (check === false) {
-      setColorDe("gray");
-      setColorEn("white");
-    }
-  }, [check]);
 
   return (
     <div className="mobile">
@@ -84,21 +72,29 @@ const Navbar = () => {
           </ReactBootStrap.Nav>
 
           <button
-            className="button-navbar"
-            onClick={() => handleClick("ger") & setCheck(true)}
-            style={{ color: colorDe }}
+            className={`button-navbar px-2 text-${
+              currentLanguage === "ger"
+                ? "white text-decoration-underline"
+                : "muted"
+            }`}
+            onClick={() => {
+              handleChangeLanguage("ger");
+            }}
           >
-            {" "}
-            DE{" "}
+            DE
           </button>
-          <div style={{ color: "white" }}> / </div>
+          <span className="text-white">/</span>
           <button
-            className="button-navbar"
-            onClick={() => handleClick("en") & setCheck(false)}
-            style={{ color: colorEn }}
+            className={`button-navbar px-2 text-${
+              currentLanguage === "en"
+                ? "white text-decoration-underline"
+                : "muted"
+            }`}
+            onClick={() => {
+              handleChangeLanguage("en");
+            }}
           >
-            {" "}
-            EN{" "}
+            EN
           </button>
         </ReactBootStrap.Navbar.Collapse>
       </ReactBootStrap.Navbar>
