@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./BeBoldCircle.css";
-import Aos from "aos";
 
 const BeBoldCircle = () => {
   const [position, setPosition] = useState(0);

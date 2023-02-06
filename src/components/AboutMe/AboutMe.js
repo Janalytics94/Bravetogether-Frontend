@@ -3,8 +3,6 @@ import "./AboutMe.scss";
 
 import { useTranslation } from "react-i18next";
 
-//import { Link } from 'react-router-dom';
-
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -12,10 +10,6 @@ import JanaImg from "../../images/JanaWebsite.jpeg";
 
 const AboutMe = () => {
   const { t, i18n } = useTranslation();
-
-  function handleClick(lang) {
-    i18n.changeLanguage(lang);
-  }
 
   useEffect(() => {
     Aos.init({ duration: 2000 });
@@ -42,10 +36,8 @@ const AboutMe = () => {
             )}
           </div>
           <div className="second">
-            <p className="about_me">
-              <h2> {t("aboutme.1")}</h2>
-              {t("aboutme.2")}
-            </p>
+            <h2> {t("aboutme.1")}</h2>
+            <p className="about_me">{t("aboutme.2")}</p>
           </div>
         </div>
       </div>

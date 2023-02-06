@@ -1,15 +1,11 @@
 import React from "react";
 
-import "./needHelp.css";
-import Footer from "../../Footer/Footer";
 import { useTranslation } from "react-i18next";
+import Footer from "../../Footer/Footer";
+import "./needHelp.css";
 
 const NeedHelp = () => {
-  const { t, i18n } = useTranslation();
-
-  function handleClick(lang) {
-    i18n.changeLanguage(lang);
-  }
+  const { t } = useTranslation();
 
   return (
     <>

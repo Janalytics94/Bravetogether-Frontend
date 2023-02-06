@@ -1,23 +1,17 @@
 import React from "react";
-import "./Idea.scss";
 import { useTranslation } from "react-i18next";
+import "./Idea.scss";
 
 const Idea = () => {
-  const { t, i18n } = useTranslation();
-
-  function handleClick(lang) {
-    i18n.changeLanguage(lang);
-  }
+  const { t } = useTranslation();
 
   return (
     <>
       <div id="idea"></div>
       <div className="background_idea">
         <div className="idea_containter">
-          <p className="idea">
-            <h2>{t("theidea.1")}</h2>
-            {t("theidea.2")}
-          </p>
+          <h2>{t("theidea.1")}</h2>
+          <p className="idea">{t("theidea.2")}</p>
         </div>
       </div>
     </>
