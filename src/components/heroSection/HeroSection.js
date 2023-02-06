@@ -1,16 +1,11 @@
 import React from "react";
-import "./HeroSection.css";
 import { Button } from "react-bootstrap";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useTranslation } from "react-i18next";
+import { HashLink } from "react-router-hash-link";
+import "./HeroSection.css";
 
 function HeroSection() {
-  //const {t, i18n} = useTranslation();
   const { t } = useTranslation();
-
-  // function handleClick(lang) {
-  //     i18n.changeLanguage(lang)
-  // }
 
   const style1 = {
     position: "absolute",
@@ -71,35 +66,35 @@ function HeroSection() {
 
         <div className="btn">
           <div className="button1">
-            <AnchorLink href="#experience">
+            <HashLink to="#experience">
               <Button style={style1} variant="outline-light">
                 {t("herosection.1")}
               </Button>
-            </AnchorLink>
+            </HashLink>
           </div>
 
           <div className="button1_mobile">
-            <AnchorLink href="#experience">
+            <HashLink to="#experience">
               <Button style={style_1_1} variant="light">
                 {t("herosection.1")}
               </Button>
-            </AnchorLink>
+            </HashLink>
           </div>
 
           <div className="button2">
-            <AnchorLink href="#aboutme">
+            <HashLink to="#aboutme">
               <Button style={style2} variant="outline-light">
                 {t("herosection.2")}
               </Button>
-            </AnchorLink>
+            </HashLink>
           </div>
 
           <div className="button2_mobile">
-            <AnchorLink href="#aboutme">
+            <HashLink to="#aboutme">
               <Button style={style_2_1} variant="light">
                 {t("herosection.2")}
               </Button>
-            </AnchorLink>
+            </HashLink>
           </div>
         </div>
       </div>

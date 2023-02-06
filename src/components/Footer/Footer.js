@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.scss";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import * as ReactBootStrap from "react-bootstrap";
 
 const Footer = () => {
   return (

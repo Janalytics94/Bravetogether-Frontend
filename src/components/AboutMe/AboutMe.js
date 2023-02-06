@@ -1,17 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./AboutMe.scss";
-import { useEffect } from "react";
 
 import { useTranslation } from "react-i18next";
 
-import TestBild from "../../images/bw2.jpeg";
-
-import AnchorLink from "react-anchor-link-smooth-scroll";
 //import { Link } from 'react-router-dom';
 
 import Aos from "aos";
 import "aos/dist/aos.css";
-import IdeaImg from "../../images/Idea.jpg";
 
 import JanaImg from "../../images/JanaWebsite.jpeg";
 
