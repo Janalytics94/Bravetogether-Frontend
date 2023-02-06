@@ -1,9 +1,9 @@
-import React, { useContext, useState, useCallback, Suspense } from "react";
-import "./Questions.scss";
+import React, { useCallback, useState } from "react";
 import * as ReactBootStrap from "react-bootstrap";
-import { useTranslation } from "react-i18next";
 import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useTranslation } from "react-i18next";
+import "./Questions.scss";
 
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -11,8 +11,8 @@ import * as yup from "yup";
 import "bootstrap-daterangepicker/daterangepicker.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-import en from "date-fns/locale/en-US";
 import de from "date-fns/locale/de";
+import en from "date-fns/locale/en-US";
 
 registerLocale("de", de);
 registerLocale("el", en);
@@ -109,8 +109,8 @@ const Questions = () => {
   const [kindOfAttack, setKindOfAttack] = useState([]);
   const handleSelect = function (selectedItems) {
     const harassement = [];
-    for (let i = 0; i < selectedItems.length; i++) {
-      harassement.push(selectedItems[i].value);
+    for (const element of selectedItems) {
+      harassement.push(element.value);
     }
     setKindOfAttack(harassement);
   };
@@ -153,7 +153,7 @@ const Questions = () => {
                     }
                   }}
                 >
-                  <ReactBootStrap.Form.Row>
+                  <ReactBootStrap.Row>
                     <ReactBootStrap.Form.Group
                       as={ReactBootStrap.Col}
                       controlId="formGridState"
@@ -189,10 +189,10 @@ const Questions = () => {
                         onChange={(e) => setAge(e.target.value)}
                       />
                     </ReactBootStrap.Form.Group>
-                  </ReactBootStrap.Form.Row>
+                  </ReactBootStrap.Row>
 
                   <h4 className="header_question">{t("questions.35")}</h4>
-                  <ReactBootStrap.Form.Row>
+                  <ReactBootStrap.Row>
                     <ReactBootStrap.Form.Group
                       as={ReactBootStrap.Col}
                       controlId="formGridPassword"
@@ -219,7 +219,7 @@ const Questions = () => {
                         />
                       )}
                     </ReactBootStrap.Form.Group>
-                  </ReactBootStrap.Form.Row>
+                  </ReactBootStrap.Row>
 
                   <h4 className="header_question">{t("questions.36")}</h4>
 
@@ -238,7 +238,7 @@ const Questions = () => {
                   </ReactBootStrap.Form.Group>
                   {booleanTrain ? (
                     <>
-                      <ReactBootStrap.Form.Row>
+                      <ReactBootStrap.Row>
                         <ReactBootStrap.Form.Group
                           sm={6}
                           as={ReactBootStrap.Col}
@@ -273,7 +273,7 @@ const Questions = () => {
                             onChange={(e) => setLine(e.target.value)}
                           />
                         </ReactBootStrap.Form.Group>
-                      </ReactBootStrap.Form.Row>
+                      </ReactBootStrap.Row>
                     </>
                   ) : (
                     <></>
@@ -294,7 +294,7 @@ const Questions = () => {
 
                   {booleanPublic ? (
                     <>
-                      <ReactBootStrap.Form.Row>
+                      <ReactBootStrap.Row>
                         <ReactBootStrap.Form.Group
                           sm={6}
                           as={ReactBootStrap.Col}
@@ -327,7 +327,7 @@ const Questions = () => {
                             onChange={(e) => setNamePlace(e.target.value)}
                           />
                         </ReactBootStrap.Form.Group>
-                      </ReactBootStrap.Form.Row>
+                      </ReactBootStrap.Row>
                     </>
                   ) : (
                     <></>
@@ -349,7 +349,7 @@ const Questions = () => {
                   <ReactBootStrap.Form.Label>
                     Wie lautet die (ungefähre) Adresse des Vorfalls?
                   </ReactBootStrap.Form.Label>
-                  <ReactBootStrap.Form.Row>
+                  <ReactBootStrap.Row>
                     <ReactBootStrap.Form.Group
                       md={4}
                       as={ReactBootStrap.Col}
@@ -394,10 +394,10 @@ const Questions = () => {
                         onChange={(e) => setCity(e.target.value)}
                       />
                     </ReactBootStrap.Form.Group>
-                  </ReactBootStrap.Form.Row>
+                  </ReactBootStrap.Row>
 
                   <h4 className="header_question">{t("questions.37")}</h4>
-                  <ReactBootStrap.Form.Row>
+                  <ReactBootStrap.Row>
                     <ReactBootStrap.Form.Group
                       as={ReactBootStrap.Col}
                       controlId="Beleuchtung"
@@ -460,7 +460,7 @@ const Questions = () => {
                         <option>5</option>
                       </ReactBootStrap.Form.Control>
                     </ReactBootStrap.Form.Group>
-                  </ReactBootStrap.Form.Row>
+                  </ReactBootStrap.Row>
 
                   <ReactBootStrap.Form.Group controlId="1">
                     <ReactBootStrap.Form.Label>
@@ -476,7 +476,7 @@ const Questions = () => {
                   </ReactBootStrap.Form.Group>
 
                   <h4 className="header_question">{t("questions.37_1")}</h4>
-                  <ReactBootStrap.Form.Row>
+                  <ReactBootStrap.Row>
                     <ReactBootStrap.Form.Group
                       as={ReactBootStrap.Col}
                       controlId="formGridState"
@@ -509,7 +509,7 @@ const Questions = () => {
                         <option>{t("questions.25")}</option>
                       </ReactBootStrap.Form.Control>
                     </ReactBootStrap.Form.Group>
-                  </ReactBootStrap.Form.Row>
+                  </ReactBootStrap.Row>
                   <ReactBootStrap.Form.Group controlId="1">
                     <ReactBootStrap.Form.Label>
                       {t("questions.8")}

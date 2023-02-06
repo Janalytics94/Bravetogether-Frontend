@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navigation/Navigation";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Contact from "./components/views/contact/Contact";
 import DataPrivacy from "./components/views/dataPrivacy/dataPrivacy";
