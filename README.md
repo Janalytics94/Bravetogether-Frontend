@@ -32,7 +32,7 @@ Deploy to S3.
 npm run build && aws s3 sync --delete build/ s3://bravetogether
 ```
 
-If you want to make the changes visisble immediatly, you can create a CloudFront cache invalidation:
+If you want to make the changes visible immediatly, you can create a CloudFront cache invalidation:
 
 ```sh
 aws cloudfront create-invalidation --distribution-id="E2TMRPZ042OI50" --paths="/*"
