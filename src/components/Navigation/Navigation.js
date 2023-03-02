@@ -17,7 +17,7 @@ const Navigation = () => {
 
   return (
     <Navbar
-      className="color-nav"
+      className="color-nav px-2"
       collapseOnSelect
       expand="lg"
       variant="dark"
