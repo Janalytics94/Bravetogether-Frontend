@@ -490,7 +490,6 @@ const Questions = () => {
                         as="select"
                         multiple
                         style={{ height: "267px" }}
-                        defaultValue={t("questions.16")}
                         onChange={(e) => handleSelect(e.target.selectedOptions)}
                       >
                         <option>{t("questions.20")}</option>
