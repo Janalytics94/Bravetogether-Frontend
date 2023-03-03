@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from "react";
 import * as ReactBootStrap from "react-bootstrap";
+import Alert from "react-bootstrap/Alert";
 import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useTranslation } from "react-i18next";
@@ -8,11 +9,9 @@ import "./Questions.scss";
 import { Formik } from "formik";
 import * as yup from "yup";
 
-import "bootstrap-daterangepicker/daterangepicker.css";
-import "bootstrap/dist/css/bootstrap.css";
-
 import de from "date-fns/locale/de";
 import en from "date-fns/locale/en-US";
+import Reaptcha from "reaptcha";
 
 registerLocale("de", de);
 registerLocale("el", en);
@@ -32,41 +31,42 @@ const Questions = () => {
   const [people, setPeople] = useState();
   const [circumstancesWhere, setCircumstancesWhere] = useState();
   const [circumstancesWhat, setCircumstancesWhat] = useState();
-  const [circumstancesReport, setCircumstancesReport] = useState();
 
   const [yes, setYes] = useState();
   const [no, setNo] = useState();
-  const [what1, setWhat1] = useState();
   const [feel, setFeel] = useState("");
   const [report, setReport] = useState("");
-  const [dataProtection, setDataProtection] = useState(false);
 
   const [booleanPublic, setBooleanPublic] = useState(false);
   const [booleanTrain, setBooleanTrain] = useState(false);
 
   const [checkbox, setCheckbox] = useState(false);
 
-  //TEST
-  const [field, setField] = useState([]);
-  //TEST
-
   const { t, i18n } = useTranslation();
 
-  function handleClick(lang) {
-    i18n.changeLanguage(lang);
-  }
+  const [kindOfAttack, setKindOfAttack] = useState([]);
+  const handleSelect = function (selectedItems) {
+    const harassement = [];
+    for (const element of selectedItems) {
+      harassement.push(element.value);
+    }
+    setKindOfAttack(harassement);
+  };
 
   const schema = yup.object().shape({
-    /*            firstName: yup.string().required(),
-                    lastName: yup.string().required(),
-                    username: yup.string().required(),
-                    city: yup.string().required(),
-                    state: yup.string().required(),
-                    zip: yup.string().required(),*/
-
     terms: yup.bool().required().oneOf([true], t("questions.46")),
   });
-  const fetchSurvery = useCallback(async () => {
+
+  const [captchaToken, setCaptchaToken] = useState("");
+  const verifyCaptcha = useCallback((captchaToken) => {
+    if (captchaToken) {
+      setCaptchaToken(captchaToken);
+    }
+  }, []);
+
+  const [submitError, setSubmitError] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const sendResponse = useCallback(async () => {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -98,28 +98,55 @@ const Questions = () => {
         },
         reported: { No: no, Yes: yes, report: report },
         feelings: feel,
+        captchaToken: captchaToken,
       }),
     };
-    const result = await fetch(
-      "https://34a0a8c8i6.execute-api.eu-central-1.amazonaws.com/api/UserSurveys/add",
-      requestOptions
-    );
-  });
-
-  const [kindOfAttack, setKindOfAttack] = useState([]);
-  const handleSelect = function (selectedItems) {
-    const harassement = [];
-    for (const element of selectedItems) {
-      harassement.push(element.value);
+    try {
+      const result = await fetch(
+        "https://34a0a8c8i6.execute-api.eu-central-1.amazonaws.com/api/UserSurveys/add",
+        requestOptions
+      );
+      if (!result.ok) {
+        setSubmitError(true);
+        setSubmitSuccess(false);
+        setCaptchaToken("");
+      }
+      setSubmitSuccess(true);
+      setSubmitError(false);
+      setCaptchaToken("");
+    } catch (error) {
+      console.error(error);
+      setSubmitError(true);
+      setSubmitSuccess(false);
+      setCaptchaToken("");
     }
-    setKindOfAttack(harassement);
-  };
+  }, [
+    age,
+    circumstancesWhat,
+    circumstancesWhere,
+    city,
+    date,
+    feel,
+    kindOfAttack,
+    light,
+    line,
+    namePlace,
+    no,
+    people,
+    place,
+    postcode,
+    publicTraffic,
+    report,
+    sex,
+    street,
+    yes,
+    captchaToken,
+  ]);
 
   return (
     <>
       <Formik
         validationSchema={schema}
-        onSubmit={console.log}
         initialValues={{
           firstName: "Mark",
           lastName: "Otto",
@@ -130,15 +157,7 @@ const Questions = () => {
           terms: false,
         }}
       >
-        {({
-          handleSubmit,
-          handleChange,
-          handleBlur,
-          values,
-          touched,
-          isValid,
-          errors,
-        }) => (
+        {({ handleChange, errors }) => (
           <div style={{ backgroundColor: "white" }}>
             <div className="questions_containter">
               <p className="questions" data-aos="fade-right"></p>
@@ -149,7 +168,7 @@ const Questions = () => {
                   onSubmit={(event) => {
                     event.preventDefault();
                     if (checkbox) {
-                      fetchSurvery();
+                      sendResponse();
                     }
                   }}
                 >
@@ -586,13 +605,28 @@ const Questions = () => {
                       id="validationFormik0"
                     />
                   </ReactBootStrap.Form.Group>
+                  <Reaptcha
+                    sitekey="6LeODMskAAAAAFHjhnTPpmjerWwOubTEpn7wiX6-"
+                    onVerify={verifyCaptcha}
+                  />
                   <ReactBootStrap.Button
                     size="md"
                     variant="primary"
                     type="submit"
+                    disabled={!captchaToken || !checkbox}
                   >
                     {t("questions.18")}
                   </ReactBootStrap.Button>
+                  {submitError && (
+                    <Alert className="mt-2" key="danger" variant="danger">
+                      {t("questions.52")}
+                    </Alert>
+                  )}
+                  {submitSuccess && (
+                    <Alert className="mt-2" key="success" variant="success">
+                      {t("questions.51")}
+                    </Alert>
+                  )}
                 </ReactBootStrap.Form>
               </div>
             </div>
