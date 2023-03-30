@@ -9,11 +9,11 @@
 
   "aboutme": {
     "1": "Über mich",
-    "2": "Ich bin Jana und ich bin mutig. Als Statistikstudentin in Berlin möchte ich mein Wissen weitergeben und Frauen helfen, sich sicherer zu fühlen. Ich habe in meinem Alltag mit sexueller Belästigung zu tun: Unzählige Male wurde ich angemacht, verfolgt oder sogar angefasst. Diese Erfahrungen haben mich geprägt und wie ich mich verhalte, wenn ich mein Haus verlasse. Das treibt mich an einen Punkt, an dem ich einfach nicht akzeptieren kann, dass Frauen sich so fühlen müssen, und daher habe ich den Ehrgeiz, aktiv für Sicherheit und Gerechtigkeit zu kämpfen."
+    "2": "Hi, ich bin Jana. Als Statistikstudentin in Berlin möchte ich mein Wissen weitergeben und Menschen helfen, sich sicherer zu fühlen. Ich habe in meinem Alltag mit sexueller Belästigung zu tun: Unzählige Male wurde ich angemacht, verfolgt oder sogar angefasst. Diese Erfahrungen haben mich geprägt und wie ich mich verhalte, wenn ich mein Haus verlasse. Das treibt mich an einen Punkt, an dem ich einfach nicht akzeptieren kann, dass Menschen - vor allem Frauen - sich so fühlen müssen, und daher habe ich den Ehrgeiz, aktiv für Sicherheit und Gerechtigkeit zu kämpfen."
   },
   "theidea": {
     "1": "Die Idee",
-    "2": "Es gibt Momente, in denen Frauen im öffentlichen Raum negativen Situationen ausgesetzt sind - jederzeit und überall. Sexuelle Belästigung kann mit einem Blick oder einer unangemessenen Bemerkung beginnen und bis hin zu körperlichen Übergriffen gehen. Mein Ziel ist es, das Bewusstsein zu schärfen und Schutzmöglichkeiten für Frauen zu schaffen, indem Missstände in der Stadtplanung aufgedeckt werden. Dazu muss ermittelt werden, wo und wann solche Vorkommnisse stattfinden und ob es Möglichkeiten gibt, sie in Zukunft zu verhindern. Zu diesem Zweck sammle ich Daten und analysiere sie mit Hilfe von maschinellen Lernalgorithmen und künstlicher Intelligenz. Im Moment ist das Gebiet der Datensammlung auf Berlin beschränkt, wird aber in Zukunft auf andere Städte ausgeweitet. Seien Sie mutig und erzählen Sie mir, was passiert ist, indem Sie den anonymen Fragebogen ausfüllen."
+    "2": "Es gibt Momente, in denen wir im öffentlichen Raum negativen Situationen ausgesetzt sind - jederzeit und überall. Sexuelle Belästigung kann mit einem Blick oder einer unangemessenen Bemerkung beginnen und bis hin zu körperlichen Übergriffen gehen. Mein Ziel ist es, das Bewusstsein zu schärfen und Schutzmöglichkeiten zu schaffen, indem Missstände in der Stadtplanung aufgedeckt werden. Dazu muss ermittelt werden, wo und wann solche Vorkommnisse stattfinden und ob es Möglichkeiten gibt, sie in Zukunft zu verhindern. Zu diesem Zweck sammle ich Daten und analysiere sie mit Hilfe von maschinellen Lernalgorithmen und künstlicher Intelligenz. Im Moment ist das Gebiet der Datensammlung auf Berlin beschränkt, wird aber in Zukunft auf andere Städte ausgeweitet. Seid mutig und erzählt mir, was passiert ist, indem ihr den anonymen Fragebogen ausfüllt."
   },
   "help": {
     "1": "Wie könnt Ihr helfen?",
@@ -83,7 +83,7 @@
     "44": "Wie viele Menschen waren in der Umgebung?",
     "44_1": "(1 Viele; 5 Niemand)",
     "45": "Ich bin mit dem Speichern und analysieren der Daten einverstanden",
-    "46": "Bitte Bedingungen Akzeptieren",
+    "46": "Bitte Bedingungen akzeptieren",
     "47": "Park",
     "48": "Öffentlicher Platz",
     "49": "Name",
@@ -98,7 +98,7 @@
     "1": "Dein Vorfall",
     "2": "Erfahre mehr über mich",
     "3": "Sexuelle Belästigung gemeinsam aufdecken - denn sie betrifft uns alle.",
-    "4": "Sexuelle Belästigung hat keinen Platz in unserer Welt, ist aber immer noch ein häufiges Problem im Leben einer Frau. Teilen Sie Ihre Erfahrungen mit, und ich analysiere das Ergebnis, um gemeinsam dagegen zu kämpfen."
+    "4": "Sexuelle Belästigung hat keinen Platz in unserer Welt, ist aber immer noch ein häufiges Problem in unserem Leben. Teilt eure Erfahrungen mit, und ich analysiere das Ergebnis, um gemeinsam dagegen zu kämpfen."
   },
   "needhelp": {
     "1": "Benötigst du professionelle Hilfe?",
